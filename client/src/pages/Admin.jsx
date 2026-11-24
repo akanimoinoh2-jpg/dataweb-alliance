@@ -5,9 +5,7 @@ const emptyProject = { title: '', description: '', category: '', image: '', link
 const emptyService = { title: '', description: '', icon: 'cog' };
 
 export default function Admin() {
-  const [token, setToken] = useState(localStorage.getItem('dwa_token') || '');
-  const [username, setUsername] = useState('admin');
-  const [password, setPassword] = useState('');
+  const [token, setToken] = useState(localStorage.getItem('dwa_token') || 'local-admin');
   const [error, setError] = useState('');
   const [tab, setTab] = useState('projects');
 
@@ -29,24 +27,20 @@ export default function Admin() {
   };
 
   useEffect(() => {
-    if (token) load();
+    if (!token) {
+      // Auto-authenticate (no login required)
+      localStorage.setItem('dwa_token', 'local-admin');
+      setToken('local-admin');
+      return;
+    }
+    load();
   }, [token]);
 
-  const login = async e => {
-    e.preventDefault();
-    setError('');
-    try {
-      const { token: t } = await api.login(username, password);
-      localStorage.setItem('dwa_token', t);
-      setToken(t);
-    } catch (err) {
-      setError(err.message);
-    }
-  };
-
   const logout = () => {
-    localStorage.removeItem('dwa_token');
-    setToken('');
+    // Re-set the token immediately (login is no longer required)
+    setToken('local-admin');
+    localStorage.setItem('dwa_token', 'local-admin');
+    load();
   };
 
   const flash = text => {
@@ -75,20 +69,9 @@ export default function Admin() {
   };
 
   if (!token) {
-    return (
-      <section className="section">
-        <div className="container narrow">
-          <form className="card form login-card" onSubmit={login}>
-            <h2 className="center">Admin Login</h2>
-            <input value={username} onChange={e => setUsername(e.target.value)} placeholder="Username" required />
-            <input value={password} onChange={e => setPassword(e.target.value)} type="password" placeholder="Password" required />
-            <button className="btn btn-primary" type="submit">Login</button>
-            {error && <p className="error center">{error}</p>}
-            <p className="muted small center">Default: admin / admin123 (change it after first login)</p>
-          </form>
-        </div>
-      </section>
-    );
+    // Auto-authenticate (no login required)
+    localStorage.setItem('dwa_token', 'local-admin');
+    setToken('local-admin');
   }
 
   return (
