@@ -1,0 +1,93 @@
+{
+  "projects": [
+    {
+      "id": "p1",
+      "title": "Corporate Business Website",
+      "description": "A modern, responsive corporate website designed and developed for a growing business, featuring service pages, a blog and a contact system.",
+      "category": "Web Development",
+      "image": "",
+      "link": "",
+      "featured": true
+    },
+    {
+      "id": "p2",
+      "title": "Sales Performance Dashboard",
+      "description": "An interactive dashboard that visualizes sales data across regions, helping management track targets and make data-driven decisions.",
+      "category": "Data Visualization",
+      "image": "",
+      "link": "",
+      "featured": true
+    },
+    {
+      "id": "p3",
+      "title": "Business Intelligence Report Suite",
+      "description": "Automated BI reports and KPI tracking for a retail business, turning raw transaction data into actionable insights.",
+      "category": "Business Intelligence",
+      "image": "",
+      "link": "",
+      "featured": false
+    },
+    {
+      "id": "p4",
+      "title": "Professional Portfolio Design",
+      "description": "A clean, professional online portfolio that showcases skills, projects and experience for a client seeking new opportunities.",
+      "category": "Portfolio Design",
+      "image": "",
+      "link": "",
+      "featured": false
+    }
+  ],
+  "services": [
+    {
+      "id": "s1",
+      "title": "Website Design & Development",
+      "description": "Modern, responsive and fast websites built with the latest technologies to give your brand a strong online presence.",
+      "icon": "globe"
+    },
+    {
+      "id": "s2",
+      "title": "Data Analysis & Visualization",
+      "description": "Turning raw data into clear, meaningful insights with charts, graphs and visual stories anyone can understand.",
+      "icon": "chart"
+    },
+    {
+      "id": "s3",
+      "title": "Business Intelligence & Reporting",
+      "description": "Automated reports and KPI dashboards that help you monitor performance and make smarter decisions.",
+      "icon": "report"
+    },
+    {
+      "id": "s4",
+      "title": "Interactive Dashboard Development",
+      "description": "Custom interactive dashboards that bring your data to life and put real-time insights at your fingertips.",
+      "icon": "grid"
+    },
+    {
+      "id": "s5",
+      "title": "Professional Portfolio Design",
+      "description": "Stand out with a beautifully designed professional portfolio that showcases your skills and experience.",
+      "icon": "user"
+    },
+    {
+      "id": "s6",
+      "title": "Digital Solutions for Businesses",
+      "description": "Tailored digital tools and solutions that simplify processes, improve efficiency and support business growth.",
+      "icon": "cog"
+    }
+  ],
+  "messages": [
+    {
+      "id": "m_mwunssnefre1",
+      "name": "Test",
+      "email": "t@t.com",
+      "subject": "",
+      "message": "hi",
+      "read": false,
+      "createdAt": "2026-11-24T12:16:44.810Z"
+    }
+  ],
+  "admin": {
+    "username": "admin",
+    "passwordHash": "$2a$10$WUxVbCzN2jNg1Zn1XtAIfub/9ZQZ7MJBdncHNlmEXr3ON1eTIwRUO"
+  }
+}

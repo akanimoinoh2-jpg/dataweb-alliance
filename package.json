@@ -1,0 +1,15 @@
+{
+    "name": "dataweb-alliance",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "install-all": "cd server && npm install && cd ../client && npm install",
+        "server": "cd server && node index.js",
+        "client": "cd client && npm run dev",
+        "build": "cd client && npm run build",
+        "dev": "concurrently -n server,client -c blue,green \"npm run server\" \"npm run client\""
+    },
+    "devDependencies": {
+        "concurrently": "^10.0.7"
+    }
+}
